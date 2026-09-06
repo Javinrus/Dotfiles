@@ -20,6 +20,3 @@ hl.animation({ leaf = "fadeLayersOut",    enabled = true,  speed = 4.5, bezier =
 
 hl.animation({ leaf = "workspaces",       enabled = true,  speed = 4.0, bezier = "windMove",   style = "slide" })
 hl.animation({ leaf = "specialWorkspace", enabled = true,  speed = 3.0, bezier = "md3_decel",  style = "slidefade 15%" })
-
--- Based on:
--- https://github.com/cebem1nt/dotfiles/blob/main/.config/hypr/config/animations.lua
