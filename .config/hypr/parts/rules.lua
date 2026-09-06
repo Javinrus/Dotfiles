@@ -66,7 +66,7 @@ hl.window_rule({
 hl.window_rule({
     name = "Thunar menu force center",
     match = {
-        class = "(thunar|Thunar)"
+        class = "(thunar|Thunar)",
         title = "^(Confirm to replace files)$",
     },
 
