@@ -1,6 +1,4 @@
---
---
-
+-- https://github.com/yayuuu/hyprland-scroll-overview/wiki/ALT-Tab-overview
 local overview = {}
 
 local overviewUse = false
@@ -22,3 +20,50 @@ local function selection_state()
     local windowAddress = object_value(hl.get_active_window(), "address")
     return tostring(workspaceId) .. ":" .. tostring(windowAddress)
 end
+
+local function navigate_to_first_column()
+    local previousState
+    local maxSteps = #(hl.get_windows() or {}) + #(hl.get_workspaces() or {}) + 1
+
+    for _ = 1, maxSteps do
+        local currentState = selection_state()
+        if currentState == previousState then
+            return
+        end
+
+        previousState = currentState
+        hl.plugin.scrolloverview.navigate("left")
+    end
+end
+
+local function navigate_next_column()
+    local previousState = selection_state()
+    hl.plugin.scrolloverview.navigate("right")
+
+    if selection_state() == previousState then
+        navigate_to_first_column()
+    end
+end
+
+function overview.next()
+    hl.config({
+        plugin = {
+            scrolloverview = {
+                layout = "horizontal",
+                scale = 0.3,
+            },
+        },
+    })
+    hl.plugin.scrolloverview.overview("on")
+    overviewUse = true
+    navigate_next_column()
+end
+
+function overview.close()
+    if overviewUse then
+        hl.plugin.scrolloverview.overview("off")
+        overviewUse = false
+    end
+end
+
+return overview
