@@ -6,8 +6,6 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
--- I'm making my own cursor theme soon
--- Using Nordzy's for now
 hl.env("HYPRCURSOR_THEME", "Nordzy-hyprcursor")
 hl.env("HYPRCURSOR_SIZE", "32")
 hl.env("XCURSOR_THEME", "Nordzy-cursor")
@@ -20,8 +18,7 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("CLUTTER_BACKEND", "wayland")
 
--- What is this?
--- Basically helps apps to figure out where to store:
+-- Tell apps to figure out where to store:
 local XDG_STATE_HOME  = HOME .. "/.local/state" -- Persistent state/history
 local XDG_DATA_HOME   = HOME .. "/.local/share" -- Persistent application data
 local XDG_CONFIG_HOME = HOME .. "/.config"      -- Configuration files
@@ -67,6 +64,3 @@ hl.env(
         XDG_CONFIG_HOME
     )
 )
-
--- Based on:
--- https://github.com/cebem1nt/dotfiles/blob/main/.config/hypr/config/env.lua
