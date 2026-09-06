@@ -50,7 +50,7 @@ function overview.next()
         plugin = {
             scrolloverview = {
                 layout = "horizontal",
-                scale = 0.3,
+                scale = 0.7,
             },
         },
     })
