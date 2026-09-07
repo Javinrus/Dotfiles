@@ -5,7 +5,7 @@ hl.curve("menu_decel", { type = "bezier", points = { {0.10, 1.00}, {0.00, 1.00} 
 hl.curve("menu_accel", { type = "bezier", points = { {0.38, 0.04}, {1.00, 0.07} } })
 hl.curve("windMove",   { type = "bezier", points = { {0.83, 0.00}, {0.17, 1.00} } })
 
-hl.curve("easy",       { type = "spring", mass = 0.51, stiffness = 230.26, dampening = 19.8 })
+hl.curve("easy", { type = "spring", mass = 0.51, stiffness = 230.26, dampening = 19.8 })
 
 hl.animation({ leaf = "borderangle",      enabled = false, })
 hl.animation({ leaf = "windows",          enabled = true,  speed = 3.0, spring = "easy",       style = "popin 60%" })
