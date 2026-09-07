@@ -1,5 +1,5 @@
 -- https://wiki.hypr.land/Plugins/Using-Plugins/
-hl.exec_cmd("hyprpm reload")
+local overview = require("parts.functions")
 
 hl.config({
     plugin = {
@@ -18,8 +18,6 @@ hl.config({
         },
     },
 })
-
-local overview = require("parts.functions")
 
 hl.bind("SUPER + Tab",     overview.next,  { submap_universal = true })
 hl.bind("SUPER + SUPER_L", overview.close, { release = true, transparent = true })
