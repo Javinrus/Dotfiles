@@ -46,24 +46,14 @@ local function navigate_next_column()
 end
 
 function overview.next()
-    hl.config({
-        plugin = {
-            scrolloverview = {
-                layout = "horizontal",
-                scale = 0.7,
-            },
-        },
-    })
     hl.plugin.scrolloverview.overview("on")
     overviewUse = true
     navigate_next_column()
 end
 
 function overview.close()
-    if overviewUse then
-        hl.plugin.scrolloverview.overview("off")
-        overviewUse = false
-    end
+    hl.plugin.scrolloverview.overview("off")
+    overviewUse = false
 end
 
 return overview
