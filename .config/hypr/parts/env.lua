@@ -41,6 +41,7 @@ hl.env("XDG_CACHE_HOME",  XDG_CACHE_HOME)
 -- Force some apps to use XDG base directories
 hl.env("GNUPGHOME",             XDG_DATA_HOME   .. "/gnupg")
 hl.env("HISTFILE",              XDG_STATE_HOME  .. "/bash_history")
+hl.env("MYSQL_HISTFILE",        XDG_STATE_HOME  .. "/mysql_history")
 hl.env("PYTHON_HISTORY",        XDG_STATE_HOME  .. "/python_history")
 hl.env("NPM_CONFIG_USERCONFIG", XDG_CONFIG_HOME .. "/npm/npmrc")
 hl.env("NPM_CONFIG_CACHE",      XDG_CACHE_HOME  .. "/npm")
